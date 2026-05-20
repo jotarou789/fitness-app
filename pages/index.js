@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 export default function FitnessApp() {
   // Vercel / Next.js にそのまま置ける単一ページ版
@@ -90,9 +89,6 @@ export default function FitnessApp() {
             <input value={cardioKm} onChange={e=>setCardioKm(e.target.value)} placeholder="有酸素 km" className="w-full p-2 text-black rounded" />
             <button onClick={saveRecord} className="w-full bg-green-600 p-2 rounded-xl">保存</button>
           </div>}
-        </div>
-        <div className="bg-zinc-800 p-4 rounded-2xl h-48">
-          <ResponsiveContainer width="100%" height="100%"><LineChart data={chartData}><XAxis dataKey="date" hide /><YAxis /><Tooltip /><Line type="monotone" dataKey="weight" strokeWidth={2} /></LineChart></ResponsiveContainer>
         </div>
       </div>
     </div>
