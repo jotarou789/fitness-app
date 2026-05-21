@@ -188,7 +188,7 @@ function render(){
 
     <div class='bg-zinc-800 rounded-2xl p-4'>
       <h2 class='font-bold mb-2'>部位別履歴検索</h2>
-      <input oninput='searchPart=this.value;render()' placeholder='胸' class='w-full p-2 rounded-xl text-black'>
+      <input value='${searchPart}' oninput='updateSearch(this.value)' placeholder='胸' class='w-full p-2 rounded-xl text-black'>
 
       <div class='mt-3 text-sm space-y-1 max-h-40 overflow-y-auto'>
         ${Object.entries(records)
@@ -283,6 +283,11 @@ function drawChart(data){
 }
 
 render();
+
+function updateSearch(value){
+  searchPart = value;
+  render();
+}
 </script>
 </body>
 </html>
