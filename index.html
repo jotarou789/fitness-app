@@ -186,19 +186,7 @@ function render(){
       <canvas id='chart'></canvas>
     </div>
 
-    <div class='bg-zinc-800 rounded-2xl p-4'>
-      <h2 class='font-bold mb-2'>部位別履歴検索</h2>
-      <input id='searchInput' value='${searchPart}' onkeyup='updateSearch(this.value)' placeholder='胸' class='w-full p-2 rounded-xl text-black'>
-
-      <div class='mt-3 text-sm space-y-1 max-h-40 overflow-y-auto'>
-        ${Object.entries(records)
-          .filter(([k,v])=>!searchPart || v.menu?.includes(searchPart))
-          .map(([k,v])=>`<div class='bg-zinc-700 rounded-lg p-2'>${k}: ${v.menu || ''} ${v.weight ? `(${v.weight}kg)` : ''}</div>`)
-          .join('')}
-      </div>
     </div>
-
-  </div>
   `;
 
   drawChart(chartRecords);
